@@ -1,0 +1,14 @@
+<div class="navbar_container1">   
+    <div class="log_container1">
+        <img src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png">
+        <p class="name1">SharedPen</p>
+    </div>
+    <div class="sign_container1" *ngIf="!login">
+        <div class="singtext" (click)="gotosignin()">
+            <p class="sing_para">Sign in</p>
+        </div>
+        <div class="GOtext" (click)="gotosignin()"><p class="go_para">Go to Docs</p></div>
+        
+    </div>
+    <div  class="container_mail" *ngIf="login">{{email}}</div>
+</div>

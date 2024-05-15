@@ -1,0 +1,78 @@
+.nav-bar1{
+    width: 100%;
+}
+.body_container2{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+
+margin-top: 150px;
+}
+.left_container1{
+
+width: 40%;
+margin: auto;
+margin-top: 70px;
+}
+.first_para{
+    margin: 0PX;
+
+    font-size: 60px;
+    line-height: 72px;
+}
+.second_para{
+    margin-top: 20px;
+    
+    font-size: 20px;
+    line-height: 28px;
+    color: #5f6368;
+}
+.right_container1{
+    width: 60%;
+    
+    
+}
+.imgc{
+    width: 100%;
+}
+.sign_in_go_to_contianer{
+    display: flex;
+    gap:20px;
+    
+}
+.sign_in1{
+    background-color:aqua;
+    margin: 0px;
+    padding: 10px 25px;
+    color: white;
+    background-color: #1a73e8;
+    font-size: 1.2rem;
+}
+.go_to{
+    
+    margin: 0px;
+    padding: 10px 25px;
+    color:#1a73e8;
+    border: 1px solid #dadce0;
+    font-size: 1.2rem;
+    
+}
+.sign_up_container{
+    display: flex;
+    gap:20px;
+    margin-top: 35px;
+    
+}
+.sign_up_text{
+    
+    margin: 0px;
+    color: #5f6368;
+    font-size: 1.1rem;
+}
+.sign_up_button{
+    
+    margin: 0px;
+    color:#1a73e8;
+    font-size:1.1rem;
+}

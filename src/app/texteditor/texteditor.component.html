@@ -1,0 +1,11 @@
+<!-- <textarea [(ngModel)]="content" (input)="onInputChange($event.target)" class="texteditor_style"></textarea> -->
+<div class="editor-container">
+    <div class="toolbar">
+      <!-- Add toolbar buttons for formatting options -->
+      <button (click)="toggleBold()"><b>B</b></button>
+      <button (click)="toggleItalic()"><i>I</i></button>
+      <!-- Add more buttons for other formatting options -->
+    </div>
+        <div #editor class="editor"  name="username" contenteditable="true" (input)="adjustContent()" *ngFor="let page of pages" [innerHTML]="fileData">
+        </div>
+  </div>

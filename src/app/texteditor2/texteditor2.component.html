@@ -1,0 +1,35 @@
+<!-- <div class="docs-container">
+    <div class="toolbar">
+      Add toolbar buttons here
+      <button (click)="applyStyle('bold')">Bold</button>
+      <button (click)="applyStyle('italic')">Italic</button>
+      <button (click)="applyStyle('underline')">Underline</button>
+    </div>
+    <div class="editor-container">
+      <div class="page">
+        <div contenteditable="true" class="editor" (input)="onInput($event)" (keydown)="onKeydown($event)" #editor></div>
+        <div *ngFor="let cursor of cursors | keyvalue" class="cursor" >
+          <div class="cursor-icon">{{ cursor.key }}</div>
+        </div>
+      </div>
+    </div>
+  </div> --> 
+
+
+  <div class="docs-container">
+    <div class="toolbar">
+      <!-- Add toolbar buttons here -->
+      <button (click)="applyStyle('bold')">Bold</button>
+      <button (click)="applyStyle('italic')">Italic</button>
+      <button (click)="applyStyle('underline')">Underline</button>
+    </div>
+    <div class="editor-container">
+      <div class="page">
+        <div contenteditable="true" class="editor" (input)="onInput($event)" (keydown)="onKeydown($event)" #editor></div>
+        <div class="cursor" [style.left.px]="cursorPos.x" [style.top.px]="cursorPos.y">
+          <div class="cursor-icon">{{ currentUser }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
