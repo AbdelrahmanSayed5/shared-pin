@@ -184,6 +184,7 @@ handlershare(){
  
 }
 openthedocument(index:number){
+  console.log("anaaaaaaaaaaaaa heneeeeeeeee open"+index)
     this.loading=true;
     this.fileservvice.OpenFile(index).subscribe(data => {
       this.loading=false;
