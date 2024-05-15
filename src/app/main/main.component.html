@@ -1,0 +1,98 @@
+<app-nav-bar ></app-nav-bar>
+<div class="add_documment_container">
+    <div class="add_documment">
+        <p class="start_new_text">Start a new document</p>
+        <div class="container">
+            <div class="row row-cols-6">
+                <app-file    *ngFor="let file of files; let i=index" [src]="file.src" [name]="file.name" [index]="i" [user]="file.user" (click)="handleCreateOnClick(i)"></app-file>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+<div class="user_documents">
+  <div class="header_container">
+    <p class="recent_docs_text">Recent documnets</p>
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {{button_text}}
+      </button>
+      <ul class="dropdown-menu">
+        <li class="hover_li"><a class="dropdown-item" (click)="handleownednyme()">Owned by me</a></li>
+        <li class="hover_li"><a class="dropdown-item" (click)="handlesharedwithme()">Shared with me</a></li>
+      </ul>
+    </div>
+
+  </div>
+   
+    <div class="container2" *ngIf="!loading">
+        <div class="row row-cols-5" *ngIf="ownednyme">
+            <app-file *ngFor="let file of filesOwnedByUser;let i=index" [src]="file.src" [name]="file.name" [index]="i" [user]="file.user" (clickedindex_rename)="whichclickedrename($event)" (clickedindex_share)="whichclickedshare($event)" (clickindex_open)="openthedocument($event)" [owner]="ownednyme" (clickedindex_remove)="removeclicked($event)"></app-file>
+        </div>
+        <div class="row row-cols-5" *ngIf="!ownednyme">
+          <app-file *ngFor="let file of filessharedwithme; let i=index" [src]="file.src" [name]="file.name" [index]="i" [user]="file.user" (clickedindex_rename)="whichclickedrename_shared($event)" (clickedindex_share)="whichclickedshare_shared($event)" (clickindex_open)="openthedocument_shared($event)" [owner]="ownednyme"></app-file>
+
+        </div>
+        
+    </div>
+    <div class="d-flex justify-content-center text-success loading_container"  style="margin-top:7rem;" *ngIf="loading" >
+      <div class="spinner-border" role="status" style="width: 5rem; height: 5rem;" >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Rename</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p class="newname_text">please enter a new name for the document:</p>
+          <form>
+            <div class="mb-3">
+              <label for="new-name" class="col-form-label">New Name:</label>
+              <input type="text" [(ngModel)]="name" name="newName"  class="form-control" id="new-name">
+            </div>
+          </form>
+        </div>  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="handlerename()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleshareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Share Document</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p class="newname_text">please enter a Recipient mail:</p>
+          <form>
+            <div class="mb-3">
+              <label for="new-name" class="col-form-label">Recipient Email:</label>
+              <input type="email" [(ngModel)]="sharedEmail" name="newName"  class="form-control" id="new-name">
+            </div>
+            <div class="mb-3">
+                <label for="new-name" class="col-form-label">Permission Type:</label>
+                <select class="form-select  mb-3" aria-label="Large select example" (change)="handlechangeinselector_share($event)">
+                  <option value="Read" selected>READ</option>
+                  <option value="Write">WRITE</option>
+                </select>
+            </div>
+          </form>
+        </div>  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="handlershare()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>

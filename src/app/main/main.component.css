@@ -1,0 +1,59 @@
+.add_documment_container{
+    width: 100%;
+    background-color: rgba(241,243,244 ,1);
+    padding-top: 80px;
+}
+.add_documment{
+    width: 60%;
+    margin: auto;
+    padding-top: 15px;
+   
+}
+.start_new_text{
+    color: #414549;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .15px;
+    line-height: 18px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    
+}
+.user_documents{
+    padding-top: 20px;
+    width: 60%;
+    margin: auto;
+    
+}
+.recent_docs_text{
+    color: #414549;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .15px;
+    line-height: 18px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.header_container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.container2{
+    margin-top: 20px;
+}
+.hover_li:hover{
+    cursor: pointer;
+}
+.loading_container{
+    margin-top:200px;
+    margin: auto;
+}

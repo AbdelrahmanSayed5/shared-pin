@@ -1,0 +1,53 @@
+<div class="container1">
+    <div class="login_container">
+        <div class="logo_container">
+        <img src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png">
+        <p class="name1">SharedPen</p>
+        </div>
+        <div class="content_Container">
+            <div class="text_container">
+                <p class="first_para1">How you'll sign in</p>
+                <p class="second_para2">Create a Gmail for siging in to your account in SharedPen.</p>
+            </div>
+            <div class="form_container" [formGroup]="registerForm" (keydown.enter)="signuphandle()">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="UserName" placeholder="Username" formControlName="username">
+                  <label for="UserName">Username</label>
+                  <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="text-danger">
+                    <div *ngIf="registerForm.get('username')?.errors?.['required']" class="error-message">Username is required.</div>
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                  <label for="floatingInput">Email address</label>
+                  <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="text-danger">
+                    <div *ngIf="registerForm.get('email')?.errors?.['required']" class="error-message">Email is required.</div>
+                    <div *ngIf="registerForm.get('email')?.errors?.['email'] && !registerForm.get('email')?.errors?.['required']" class="error-message">Invalid email format.</div>
+                    <div *ngIf="registerForm.get('email')?.errors?.['invalidEmail'] && !registerForm.get('email')?.errors?.['required'] && !registerForm.get('email')?.errors?.['email']" class="error-message">Invalid email pattern.</div>
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+                  <label for="floatingPassword">Password</label>
+                  <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="text-danger">
+                    <div *ngIf="registerForm.get('password')?.errors?.['required']" class="error-message">Password is required.</div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="buttons_container">
+            <div></div>
+            <div class="truebuttons_container">
+                <div class="existing_text" (click)="returnToLogin()">Use your existing email</div>
+                <div>
+                    <button type="button" class="btn btn-primary" (click)="signuphandle()"
+                    style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;">
+                        Sign up
+                    </button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>

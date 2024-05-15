@@ -1,0 +1,89 @@
+.navbar_container1{
+    border-bottom: 1px solid #dadce0;
+    padding-bottom: 5px;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    position: fixed;
+    top:4px;
+
+    background-color:white;
+    
+}
+
+.log_container1{
+    
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    
+}
+.name1{
+    
+    margin:0px;
+    padding-top: 12px;
+    font-size:1.3rem;
+    color:#5f6368;
+}
+.name:hover{
+    color: rgba(0, 0, 0, 0.767);
+}
+.log_container:hover{
+    
+    cursor: pointer;
+}
+
+.sign_container1{
+    display: flex;
+    
+    gap: 30px;
+    margin-right: 30px;
+}
+.singtext{
+color: #1a73e8;
+    margin-top: 3px;
+    height: fit-content;
+    font-size: 1.3rem;
+    
+}
+.sing_para{
+    margin: 0px;
+    padding: 10px 22px;
+}
+.GOtext{
+    border: 1px solid #dadce0;
+    color:#1a73e8;
+    margin-top: 3px;
+    height: fit-content;
+    font-size: 1.3rem;
+    
+
+}
+.go_para{
+    margin: 0px;
+    padding: 10px 22px;
+
+}
+.GOtext:hover{
+    
+    border: 1px solid #1a4ae8;
+    color:#615f68;
+    cursor: pointer ;
+}
+.singtext:hover{
+    background-color: #dddae063;
+    cursor: pointer;
+}
+.container_mail{
+    margin-right: 50px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    height: fit-content;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color:#5f6368;
+    cursor: pointer;
+    background-color: #dddae063;
+}
+
+

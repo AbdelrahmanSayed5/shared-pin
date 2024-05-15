@@ -49,6 +49,10 @@ margin-top: 70px;
     background-color: #1a73e8;
     font-size: 1.2rem;
 }
+.sign_in1:hover{
+    cursor: pointer;
+    background-color: #1a40e8;
+}
 .go_to{
     
     margin: 0px;
@@ -57,6 +61,11 @@ margin-top: 70px;
     border: 1px solid #dadce0;
     font-size: 1.2rem;
     
+}
+.go_to:hover{
+    cursor: pointer;
+    background-color: #1a40e80a;
+    border: 1px solid #1a40e89f;;
 }
 .sign_up_container{
     display: flex;
@@ -75,4 +84,7 @@ margin-top: 70px;
     margin: 0px;
     color:#1a73e8;
     font-size:1.1rem;
+}
+.sign_up_button:hover{
+    cursor: pointer;
 }

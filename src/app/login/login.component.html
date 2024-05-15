@@ -1,0 +1,55 @@
+<div class="container1">
+    <div class="login_container">
+        <div class="logo_container">
+        <img src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png">
+        <p class="name1">SharedPen</p>
+        </div>
+        <div class="content_Container">
+            <div class="text_container">
+                <p class="first_para1">Sign in</p>
+                <p class="second_para2">to continue to Docs</p>
+            </div>
+            <div class="form_container" [formGroup]="loginForm" (keydown.enter)="signinhandle()">
+                <div *ngIf="errormessage" class="text-danger errormessage">{{ errormessage }}</div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                  <label for="floatingInput">Email address</label>
+                  <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="text-danger">
+                    <div *ngIf="loginForm.get('email')?.errors as errors">
+                      <div *ngIf="errors['required']">Email is required.</div>
+                      <div *ngIf="errors['email'] && !errors['required']">Invalid email format.</div>
+                      <div *ngIf="errors['invalidEmail'] && !errors['required'] && !errors['email']">Invalid email pattern.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+                  <label for="floatingPassword">Password</label>
+                  <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="text-danger">
+                    <div *ngIf="loginForm.get('password')?.errors as errors">
+                      <div *ngIf="errors['required']">Password is required.</div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+              
+        </div>
+        <div class="buttons_container">
+            <div></div>
+            <div class="truebuttons_container">
+                <div class="existing_text" (click)="returnsignup()">Create account</div>
+                <div>
+                    <button type="button" class="btn btn-primary" (click)="signinhandle()"
+                    style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;">
+                        Sign in
+                    </button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+

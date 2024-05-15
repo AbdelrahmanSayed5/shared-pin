@@ -1,3 +1,5 @@
-export const environment = {
-  production: true
-};
+
+  export const environment = {
+    production: true,
+    apiUrl: 'http://48.216.240.107:8080/api/user/health'
+  };
